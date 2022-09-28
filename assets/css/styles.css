@@ -4,7 +4,7 @@
     padding: 0px;
 }
 
-div{
+.screen{
     display: grid;
     height: 100vh;
     grid-template-rows: 2fr 3fr 8fr 2fr 2fr; 
@@ -17,10 +17,25 @@ div{
 }
 
 nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 20px;
     background-color: #2057a8;
     grid-area: header-menu;
     color: white;
+    
+}
+
+.car-logo-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+}
+
+.text-logo{
+    padding: 10px;
 }
 
 section{
@@ -49,4 +64,21 @@ footer{
     background-color: #7332bd;
     grid-area: pie-pagina;
     color: black;
+}
+
+@media(min-width:992px){
+    .screen{
+        grid-template-areas: 
+            "header-menu buscador"
+            "header-menu grilla-autos"
+            "header-menu grilla-autos"
+            "header-menu grilla-autos"
+            "pie-pagina paginador";
+        
+        grid-template-columns: 2fr 10fr;
+    }
+    
+    .bars-logo{
+        display: none;
+    }
 }
