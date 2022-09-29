@@ -4,17 +4,9 @@
     padding: 0px;
 }
 
-.screen{
-    display: grid;
-    height: 100vh;
-    grid-template-rows: 2fr 3fr 8fr 2fr 2fr; 
-    grid-template-areas: 
-    "header-menu"
-    "buscador"
-    "grilla-autos"
-    "paginador"
-    "pie-pagina";
-}
+
+/*HEADER-BARRA_SECCIONES*/
+
 
 nav{
     display: flex;
@@ -38,32 +30,202 @@ nav{
     padding: 10px;
 }
 
+.sections-container{
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+
+/*SECCION-BUSCADOR*/
+
+
 section{
-    padding: 20px;
+    display: flex;
+    justify-content: center;
     background-color: #949494;
     grid-area: buscador;
     color: black;
 }
 
-main{
-    padding: 20px;
-    background-color: #FFFFFF;
-    grid-area: grilla-autos;
-    color: black;
+
+.filter-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 95%;
+    justify-content: center;
+    align-items: center;
 }
 
-article{
-    padding: 20px;
-    background-color: #bd3232;
+.select-types-text{
+    display: flex;
+    width: 50%;
+    border-style: none;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.select-types{
+    width: 80%;
+    padding: 10px;
+    border-style: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+
+/* MAIN SECTION */
+
+
+main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    grid-area: grilla-autos;
+    justify-content: center;
+}
+
+.cards-container{
+    display: grid;
+    width: 95%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    border: 1px #d1d1d1 solid;
+    border-radius: 5px;
+    height: 90%;
+    box-shadow: 0px 5px 20px 0px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    position:relative;
+    overflow: hidden;
+}
+
+.img-container img{
+    position: absolute;
+    height:70%;
+}
+
+.description-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+}
+
+.more-button{
+    color: aliceblue;
+    background-color: #0e4ea1;
+    border-style: none;
+    border-radius: 4px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* PAGINACION */
+
+
+.pages-section{
+    display: flex;
+    width: 100%;    
+    background-color: #FFFFFF;
+    flex-direction: row;
     grid-area: paginador;
     color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.casillas-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 300px;
+}
+
+.casilla{
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0.25px #dddddd solid;
+    color: #0e4ea1;
+}
+
+.casilla-right{
+    padding: 10px;
+    border: 0.25px #dddddd solid;
+    border-radius: 0px 5px 5px 0px;
+    color: #0e4ea1;
+
+}
+
+.casilla-left{
+    padding: 10px;
+    border: 0.25px #dddddd solid;
+    border-radius: 5px 0px 0px 5px;
+    color: #0e4ea1;
 }
 
 footer{
-    padding: 20px;
-    background-color: #7332bd;
+    display: flex;
+    background-color: #092f61;
+    flex-direction: column;
+    width: 100%;
     grid-area: pie-pagina;
-    color: black;
+    color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+        /* display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 20vh;
+        background-color: #092f61;
+        color: aliceblue;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem; */
+
+.screen{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 2fr 0.5fr 10fr 1fr 2fr; 
+    grid-template-areas: 
+    "header-menu"
+    "buscador"
+    "grilla-autos"
+    "paginador"
+    "pie-pagina";
 }
 
 @media(min-width:992px){
@@ -73,12 +235,52 @@ footer{
             "header-menu grilla-autos"
             "header-menu grilla-autos"
             "header-menu grilla-autos"
+            "header-menu grilla-autos"
+            "header-menu grilla-autos"
+            "header-menu grilla-autos"
+            "pie-pagina grilla-autos"
             "pie-pagina paginador";
         
         grid-template-columns: 2fr 10fr;
     }
-    
+
+    /*HEADER-BARRA_SECCIONES*/
+
     .bars-logo{
         display: none;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .car-logo-text{
+        display: flex;
+        padding: 5%;
+    }
+
+    .text-logo{
+        padding: 5px;
+    }
+
+    h1{
+        font-size: 1.25rem;
+    }
+
+    .sections-container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .section{
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+
     }
 }
