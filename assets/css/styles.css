@@ -2,6 +2,7 @@
     margin: 0px;
     border: 0px;
     padding: 0px;
+    font-family: 'Varela', sans-serif;
 }
 
 
@@ -89,6 +90,7 @@ main{
     background-color: #FFFFFF;
     grid-area: grilla-autos;
     justify-content: center;
+    overflow: scroll;
 }
 
 .cards-container{
@@ -105,11 +107,16 @@ main{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 90%;
     border: 1px #d1d1d1 solid;
     border-radius: 5px;
-    height: 90%;
-    box-shadow: 0px 5px 20px 0px;
+    height: 45vh;
+    box-shadow: 0px 5px 10px 0px;
+    overflow: auto;
+}
+
+.card-desk{
+    display: none;
 }
 
 .img-container {
@@ -228,16 +235,14 @@ footer{
     "pie-pagina";
 }
 
-@media(min-width:992px){
+@media(min-width:576px){
     .screen{
         grid-template-areas: 
             "header-menu buscador"
             "header-menu grilla-autos"
             "header-menu grilla-autos"
             "header-menu grilla-autos"
-            "header-menu grilla-autos"
-            "header-menu grilla-autos"
-            "header-menu grilla-autos"
+            "pie-pagina grilla-autos"
             "pie-pagina grilla-autos"
             "pie-pagina paginador";
         
@@ -281,6 +286,66 @@ footer{
         justify-content: center;
         margin-top: 5%;
         margin-bottom: 5%;
+
+    }
+
+    /*MAIN SECTION*/
+
+    main{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: #FFFFFF;
+        grid-area: grilla-autos;
+        justify-content: center;
+        overflow: scroll;
+    }
+    
+    .cards-container{
+        padding: 20px;
+        display: grid;
+        width: 95%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 30px;
+        overflow: auto;
+    }
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        border: 1px #d1d1d1 solid;
+        border-radius: 5px;
+        height: 35vh;
+        box-shadow: 0px 5px 20px 0px;
+        overflow: auto;
+    }
+
+    /*FOOTER*/
+
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .text-footer{
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-footer p{
+
+        font-size: 1rem;
+        
 
     }
 }
