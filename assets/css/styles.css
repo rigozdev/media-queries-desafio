@@ -235,7 +235,72 @@ footer{
     "pie-pagina";
 }
 
+
 @media(min-width:576px){
+
+    .screen{
+        grid-template-areas: 
+            "header-menu header-menu"
+            "buscador grilla-autos"
+            "buscador grilla-autos"
+            "buscador paginador"
+            "pie-pagina pie-pagina"
+            "pie-pagina pie-pagina"
+            "pie-pagina pie-pagina"
+            "pie-pagina pie-pagina";
+        
+        grid-template-columns: 4fr 10fr;
+    }
+
+    .bars-logo{
+        display: none;
+    }
+
+    .sections-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .filter-container{
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 1vh;
+    }
+
+    .section{
+        margin: 2vh;
+    }
+
+    .cards-container{
+        padding: 20px;
+        display: grid;
+        width: 95%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 30px;
+        overflow: auto;
+    }
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        border: 1px #d1d1d1 solid;
+        border-radius: 5px;
+        height: 57vh;
+        box-shadow: 0px 5px 20px 0px;
+        overflow: auto;
+    }
+}
+
+
+
+@media(min-width:992px){
     .screen{
         grid-template-areas: 
             "header-menu buscador"
@@ -275,10 +340,13 @@ footer{
     }
 
     .sections-container{
+        margin-top: 5vh;
         display: flex;
         flex-direction: column;
         height: 100%;
         width: 100%;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     .section{
