@@ -90,7 +90,7 @@ main{
     background-color: #FFFFFF;
     grid-area: grilla-autos;
     justify-content: center;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .cards-container{
@@ -366,7 +366,7 @@ footer{
         background-color: #FFFFFF;
         grid-area: grilla-autos;
         justify-content: center;
-        overflow: scroll;
+        /* overflow: scroll; */
     }
     
     .cards-container{
